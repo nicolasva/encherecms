@@ -41,6 +41,9 @@ fr:
       create: 
         notice_success: "L'enregistrement de ce nouveau menu s'est bien déroulé, il est désormais disponible"
         notice_failure: "L'enregistrement de ce menu ne s'est pas déroulé correctement, il n'est pas disponible"
+      destroy:
+        notice_success: "La supression de ce menu s'est bien déroulé, elle n'est plus disponible"
+        notice_failure: "La supression de ce menu ne s'est pas déroulé correctement, elle n'est plus disponible"
   date:
     abbr_day_names:
     - dim

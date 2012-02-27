@@ -41,6 +41,9 @@ en:
       create: 
         notice_success: "Successfully registering panel"
         notice_failure: "The panel does not register with success"
+      destroy:
+        notice_success: "Successfully destroy panel"
+        notice_failure: "This panel does not destroy correctly"  
   date:
     abbr_day_names:
     - Sun

@@ -1,13 +1,12 @@
 class Admin::ProductsController < ApplicationController
+  respond_to :html
+  
   # GET /admin/products
   # GET /admin/products.json
   def index
     @admin_products = Admin::Product.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @admin_products }
-    end
+    respond_with @admin_products
   end
 
   # GET /admin/products/1

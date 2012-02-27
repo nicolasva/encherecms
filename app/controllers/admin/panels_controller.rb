@@ -7,17 +7,6 @@ class Admin::PanelsController < ApplicationController
     respond_with @admin_panels
   end
 
-  # GET /admin/panels/1
-  # GET /admin/panels/1.json
-  def show
-    @admin_panel = Panel.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @admin_panel }
-    end
-  end
-
   def sort
     params[:admin_panel].each_with_index do |id, index|
       Panel.position(index+1,id)
@@ -63,11 +52,8 @@ class Admin::PanelsController < ApplicationController
   # DELETE /admin/panels/1.json
   def destroy
     @admin_panel = Panel.find(params[:id])
-    @admin_panel.destroy
+    @admin_panel.destroy ? t("panels.destroy.notice_success") : t("panels.destroy.notice_failure")
 
-    respond_to do |format|
-      format.html { redirect_to admin_panels_url }
-      format.json { head :no_content }
-    end
+    respond_with(@admin_panel) 
   end
 end
