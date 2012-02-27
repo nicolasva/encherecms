@@ -3,7 +3,8 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
   $(".class_admin_choise_category").ready ->
-    set_choise_categoryall(parseInt($($(".class_admin_choise_category").children()).find(':radio:checked')[0].value))     
+    if $(".class_admin_choise_category").length > 0 
+      set_choise_categoryall(parseInt($($(".class_admin_choise_category").children()).find(':radio:checked')[0].value))     
 
 jQuery ->
   $("#panel_contents_attributes_0_border").click ->

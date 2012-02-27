@@ -4,7 +4,7 @@
 jQuery ->
   $(document).ready ->
     $("#admin_panels").sortable({
-      items: '.admin_panel',
+      items: '.panel',
       update: ->
         $.ajax({
           url: "/admin/panels/sort",

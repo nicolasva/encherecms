@@ -6,12 +6,12 @@ class Admin::PanelsController < ApplicationController
 
     respond_with @admin_panels
   end
-
+  
   def sort
-    params[:admin_panel].each_with_index do |id, index|
+    params[:panel].each_with_index do |id, index|
       Panel.position(index+1,id)
     end
-
+  
     render :nothing => true
   end
 
