@@ -1,0 +1,278 @@
+en:
+  admin:
+    commons:
+      removal: "Removal"
+      edition: "Edition"
+      delete: "Delete"
+      edit: "Edit"
+    contents:
+      new:
+        notice_success: "Content was successfully add"
+        notice_failure: "Content was not successfully add"
+      update:
+        notice_success: "Content was successfully updated"
+        notice_failure: "Content was not successfully updated"
+    categoryalls:
+      new:
+        notice_success: "Category was successfully add"
+        notice_failure: "Category was not successfully add"
+      destroy:
+        notice_success: "This category was successfully deleted"
+        notice_failure: "This category was not successfully deleted"
+      update:
+        notice_success: "This category was successfully updated"
+        notice_failure: "This category was not successfully updated"
+    panels:
+      index:
+        title: "Listing admin panels" 
+        link_new_panel: "New Panel"
+        confirm_delete_panel: "Are you sure to delete this panel ?"
+        categoryall_or_content_1: "Category"
+        categoryall_or_content_2: "Content"
+        categoryall_or_content_3: "Redirect link"
+        onlyconnectuser_false: "Visible all user"
+        onlyconnectuser_true: "Visible only user connected"
+      update: 
+        notice_success: "Panel was successfully updated"
+        notice_failure: "Panel was not successfully updated"
+      edit:
+        title_editing_admin_panel: "Panel editing"
+        update_submit: "Update this panel"
+      create: 
+        notice_success: "Successfully registering panel"
+        notice_failure: "The panel does not register with success"
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    abbr_month_names:
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    formats:
+      default: ! '%d-%m-%Y'
+      long: ! '%d %B, %Y'
+      short: ! '%d %b'
+    month_names:
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+      half_a_minute: half a minute
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      x_days:
+        one: 1 day
+        other: ! '%{count} days'
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      x_months:
+        one: 1 month
+        other: ! '%{count} months'
+      x_seconds:
+        one: 1 second
+        other: ! '%{count} seconds'
+    prompts:
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: must be accepted
+      blank: can't be blank
+      confirmation: doesn't match confirmation
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      record_invalid: ! 'Validation failed: %{errors}'
+      taken: has already been taken
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+    template:
+      body: ! 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: ! '%{count} errors prohibited this %{model} from being saved'
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      submit: Save %{model}
+      update: Update %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u%n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: £
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', and '
+      two_words_connector: ! ' and '
+      words_connector: ! ', '
+  time:
+    am: am
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%d %B, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm
+  activerecord:
+    models:
+      panel: "Panel"
+      categoryall: "Category"
+      content: "Content"
+      product: "Product"
+    attributes:
+      panel:
+        name: "Name"
+        categoryall_or_content: "Category or Content"
+        linkwebsite: "Website link" 
+        categoryall_or_contenu: "Categorie ou Contenu"
+        linkwebsite: "liens de la page web"
+        position: "Position"
+        onlyconnectuser: "Panel visible only if user connected"
+      categoryall:
+        name: "Name" 
+        panel_id: "Panel id"
+        link_category: "Category link"
+        imgcategoryall: "Category Image"
+      content:
+        content_text: "Content"
+        panel_id: "Panel Id"
+        border: "Border"
+        overflow: "Overflow"
+        backgroundcolor: "Background color"
+        bordercolor: "Border color"
+        categoryall_id: "Category Id"
+      product:
+        title: "Product Title"
+        public_price: "Public price"
+        entry_price: "Enter price"
+        nbr_bidder: "Bidder number"
+        nbr_sum_spot: "Spots number"
+        imgproduct: "Product image"
+        categoryall_id: "Category Id"
+        start_inscription: "Start inscription"
+        start_enchere: "Start enchere"

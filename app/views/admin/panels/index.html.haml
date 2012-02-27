@@ -1,0 +1,32 @@
+%h1 
+  = t ".title"
+
+%table{border: 1, width: "670px"}
+  %tr
+    %td{width: "200px"}
+      = Panel.human_attribute_name("name")
+    %td{width: "125px"}
+      = Panel.human_attribute_name("categoryall_or_content") 
+    %td{width: "215px"}
+      = Panel.human_attribute_name("onlyconnectuser")
+    %td{width: "45px"}
+      = t("admin.commons.edition")
+    %td{width: "45px"}
+      = t("admin.commons.removal")
+
+%ul#admin_panels
+  = content_tag_for(:li, @admin_panels) do |admin_panel|
+    %table{border: 1, width: "670px"}
+      %tr
+        %td{width: "200px"}
+          = admin_panel.name
+        %td{width: "125px"}
+          = t(".categoryall_or_content_#{admin_panel.categoryall_or_content}")
+        %td{width: "215px"}
+          = t(".onlyconnectuser_#{admin_panel.onlyconnectuser}")
+        %td{width: "45px"}
+          = link_to(t("admin.commons.edit"), edit_admin_panel_path(admin_panel))
+        %td{width: "51px"}
+          = link_to(t("admin.commons.delete"), admin_panel, confirm: t(".confirm_delete_panel"), method: :delete) 
+
+= link_to t(".link_new_panel"), new_admin_panel_path    

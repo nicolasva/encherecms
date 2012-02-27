@@ -1,0 +1,8 @@
+- if admin_categoryall.errors.any?
+  %div#error_explanation
+    %h2
+      = "#{pluralize(admin_categoryall.errors.count, "error")} prohibited this admin_categoryall from being saved:"
+    %ul
+      - admin_categoryall.errors.full_messages.each do |msg|
+        %li
+          = msg

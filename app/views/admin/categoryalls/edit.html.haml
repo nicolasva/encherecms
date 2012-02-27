@@ -1,0 +1,9 @@
+= t("admin.panels.edit.title_editing_admin_panel")
+
+= form_for [:admin, @admin_categoryall] do |f|
+  = render(:partial => "/admin/categoryalls/templates/error_form", :locals => {:admin_categoryall => @admin_categoryall})
+  %div.actions
+    %fieldset
+      = render(:partial => "form", :locals => {:f => f, :admin_categoryall => @admin_categoryall, :admin_content => @admin_content, :admin_panel => @admin_panel})
+      %p
+        = f.submit(t("admin.panels.edit.update_submit"), :name=>"update_updcategoryalls_#{@admin_panel.id}")

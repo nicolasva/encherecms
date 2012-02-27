@@ -1,0 +1,4 @@
+%div#id_content
+  = f.submit("Ajouter un nouveau contenu", :name=>"add_newcontents_#{admin_panel.id}")
+  = f.fields_for(:contents, admin_content) do |f_admin_content|
+    = render(:partial => "/admin/contents/templates/form_content", :locals => {:admin_panel => admin_panel, :f_admin_content => f_admin_content})

@@ -1,0 +1,8 @@
+- if admin_content.errors.any?
+  %div#error_explanation
+    %h2
+      = "#{pluralize(admin_content.errors.count, "error")} prohibited this admin_panel form being saved:"
+    %ul
+      - admin_content.errors.full_messages.each do |msg|
+        %li
+          = msg

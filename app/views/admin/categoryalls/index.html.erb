@@ -1,0 +1,21 @@
+<h1>Listing admin_categoryalls</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_categoryalls.each do |admin_categoryall| %>
+  <tr>
+    <td><%= link_to 'Show', admin_categoryall %></td>
+    <td><%= link_to 'Edit', edit_admin_categoryall_path(admin_categoryall) %></td>
+    <td><%= link_to 'Destroy', admin_categoryall, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Categoryall', new_admin_categoryall_path %>

@@ -1,0 +1,21 @@
+<h1>Listing admin_products</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_products.each do |admin_product| %>
+  <tr>
+    <td><%= link_to 'Show', admin_product %></td>
+    <td><%= link_to 'Edit', edit_admin_product_path(admin_product) %></td>
+    <td><%= link_to 'Destroy', admin_product, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_admin_product_path %>

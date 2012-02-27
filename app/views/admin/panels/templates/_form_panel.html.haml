@@ -1,0 +1,14 @@
+%p
+  = f_admin_panel.label(:name)
+  %br
+  = f_admin_panel.text_field(:name)
+%p
+  %ul.class_admin_panel_categoryall_or_content
+    - Panel::CATEGORYALL_OR_CONTENT.each do |key_categoryall_or_content, value_categoryall_or_content|
+      %li    
+        = f_admin_panel.radio_button(:categoryall_or_content, value_categoryall_or_content) 
+        = key_categoryall_or_content 
+%p
+  = f_admin_panel.label(:onlyconnectuser)
+  %br
+  = f_admin_panel.check_box(:onlyconnectuser)

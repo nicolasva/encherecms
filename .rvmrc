@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+environment_app="ruby-1.9.3@encherecms"
+
+if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
+  && -s "${rvm_path:-$HOME/.rvm}/environments/$environment_app" ]] ; then
+  \. "${rvm_path:-$HOME/.rvm}/environments/$environment_app"
+else
+  rvm --create  "$environment_app"
+fi

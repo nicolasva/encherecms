@@ -1,0 +1,34 @@
+%div.class_contents_lists
+  %ul
+    - admin_panel.contents.each do |content|
+      = content_tag_for :li, content do
+        = f_admin_content.submit(content.content_text, :name => "select_reacontents_#{content.id}") 
+        = f_admin_content.submit("X", :name => "delete_descontents_#{content.id}")
+  %p
+    = f_admin_content.label(:content_text)
+    %br
+    = f_admin_content.text_field(:content_text)  
+  %p
+    = f_admin_content.label(:border)
+    = f_admin_content.check_box(:border)
+  %p
+    = f_admin_content.label(:overflow)
+    = f_admin_content.check_box(:overflow)
+  %p
+    = f_admin_content.label(:backgroundcolor)
+    %br
+    = f_admin_content.text_field(:backgroundcolor)
+  %div.class_border
+    %p
+      = f_admin_content.label(:bordercolor) 
+      %br
+      = f_admin_content.text_field(:bordercolor)
+    %p
+      = f_admin_content.label(:bordersize)
+      %br
+      = f_admin_content.select(:bordersize, options_for_select(Content.bordersize_value))
+    %p
+      = f_admin_content.label(:bordercolor)
+      %br
+      = f_admin_content.text_field(:bordercolor)
+

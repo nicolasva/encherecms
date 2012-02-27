@@ -1,0 +1,21 @@
+<h1>Listing contenus</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contenus.each do |contenu| %>
+  <tr>
+    <td><%= link_to 'Show', contenu %></td>
+    <td><%= link_to 'Edit', edit_contenu_path(contenu) %></td>
+    <td><%= link_to 'Destroy', contenu, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contenu', new_contenu_path %>
