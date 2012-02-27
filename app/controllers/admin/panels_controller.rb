@@ -4,10 +4,6 @@ class Admin::PanelsController < ApplicationController
   def index
     @admin_panels = Panel.all
 
-    #respond_to do |format|
-    #  format.html # index.html.erb
-    #  format.json { render json: @admin_panels }
-    #end
     respond_with @admin_panels
   end
 
@@ -47,22 +43,6 @@ class Admin::PanelsController < ApplicationController
     @admin_categoryall = @admin_panel.categoryalls.first
     respond_with(@admin_panel)
   end
-
-  # POST /admin/panels
-  # POST /admin/panels.json
-  #def create
-  #  @admin_panel = Admin::Panel.new(params[:admin_panel])
-
-  #  respond_to do |format|
-  #    if @admin_panel.save
-  #      format.html { redirect_to @admin_panel, notice: 'Panel was successfully created.' }
-  #      format.json { render json: @admin_panel, status: :created, location: @admin_panel }
-  #    else
-  #      format.html { render action: "new" }
-  #"      format.json { render json: @admin_panel.errors, status: :unprocessable_entity }
-  #    end
-  #  end
-  #end
 
   # PUT /admin/panels/1
   # PUT /admin/panels/1.json
