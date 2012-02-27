@@ -37,6 +37,7 @@ class Admin::ContentsController < ApplicationController
     @admin_content = Content.find(params[:id])
     @admin_panel = Panel.find(@admin_content.contains_id)
     @admin_categoryall = @admin_panel.categoryalls.first
+    @admin_product = @admin_categoryall.products.first
     respond_with(@admin_content)
   end
 

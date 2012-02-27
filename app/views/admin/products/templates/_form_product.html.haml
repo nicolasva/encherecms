@@ -1,0 +1,35 @@
+%p
+  %ul
+    - admin_categoryall.products.each do |product|
+      = content_tag_for :li, product do
+        = f_admin_product.submit(product.title, :name => "select_reaproducts_#{product.id}")
+        = f_admin_product.submit("X", :name => "delete_desproducts_#{product.id}")
+%p
+  = f_admin_product.label(:title)
+  %br
+  = f_admin_product.text_field(:title)
+
+%p
+  = f_admin_product.label(:public_price)
+  %br
+  = f_admin_product.text_field(:public_price)
+%p
+  = f_admin_product.label(:nbr_bidder)
+  %br
+  = f_admin_product.text_field(:nbr_bidder)
+%p
+  = f_admin_product.label(:nbr_sum_spot)
+  %br
+  = f_admin_product.text_field(:nbr_sum_spot)
+%p
+  = f_admin_product.label(:imgproduct)
+  %br
+  = f_admin_product.file_field(:imgproduct)
+%p
+  = f_admin_product.label(:start_inscription)
+  %br
+  = f_admin_product.check_box(:start_inscription)
+%p
+  = f_admin_product.label(:start_enchere)
+  %br
+  = f_admin_product.check_box(:start_enchere) 

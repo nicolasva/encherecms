@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
           content_id = params.split("_").last 
           admin_content = Content.find(content_id)   
           redirect_to edit_admin_content_path(admin_content) 
-        when "reacategoryall" 
+        when "reacategoryalls" 
           flash[:notice] = notice_result(params.split("_")[1], "notice_success")
           categoryall_id = params.split("_").last
           admin_categoryall = Categoryall.find(categoryall_id)

@@ -30,6 +30,7 @@ class Admin::PanelsController < ApplicationController
     @admin_panel = Panel.find(params[:id])
     @admin_content = @admin_panel.contents.first
     @admin_categoryall = @admin_panel.categoryalls.first
+    @admin_product = @admin_categoryall.products.first
     respond_with(@admin_panel)
   end
 

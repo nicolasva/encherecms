@@ -5,7 +5,7 @@ class Categoryall < ActiveRecord::Base
   
   has_many :contents, :as => :contains, :dependent => :destroy
 
-  accepts_nested_attributes_for :panel, :products
+  accepts_nested_attributes_for :panel, :products, :contents
 
   validates_presence_of :name 
   validates_presence_of :panel_id

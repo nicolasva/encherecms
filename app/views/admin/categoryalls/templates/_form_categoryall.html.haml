@@ -2,7 +2,7 @@
   %ul
     - admin_panel.categoryalls.each do |categoryall|
       = content_tag_for :li, categoryall do
-        = f_admin_categoryall.submit(categoryall.name, :name => "select_reacategoryall_#{categoryall.id}")
+        = f_admin_categoryall.submit(categoryall.name, :name => "select_reacategoryalls_#{categoryall.id}")
         = f_admin_categoryall.submit("X", :name => "delete_descategoryalls_#{categoryall.id}")
   %p
     = f_admin_categoryall.label(:name) 
@@ -19,7 +19,7 @@
         %li
           = f_admin_categoryall.radio_button(:choise_category, value_choise_category)
           = key_choise_category
-  %div#id_products
+  = render(:partial => "/admin/products/templates/form_product_with_fields_for", :locals => {:admin_categoryall => admin_categoryall, :f_admin_categoryall => f_admin_categoryall, :admin_product => admin_product})   
   %p#id_content
     = f_admin_categoryall.text_area(:content) 
   %p#id_linkwebsite 

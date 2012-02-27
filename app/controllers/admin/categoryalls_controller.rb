@@ -29,6 +29,7 @@ class Admin::CategoryallsController < ApplicationController
     @admin_categoryall = Categoryall.find(params[:id])
     @admin_panel = @admin_categoryall.panel 
     @admin_content = @admin_panel.contents.first
+    @admin_product = @admin_categoryall.products.first
     respond_with(@admin_categoryall)
   end
 
