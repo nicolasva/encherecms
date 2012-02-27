@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if params.split("_").length-1 == 2
       case params.split("_")[1]
         when "newcontents"
-          panel_id = params.split("_")[params.split("_").length-1]
+          panel_id = params.split("_").last
           admin_panel = Panel.find(panel_id.to_i)
           admin_content = Content.create
           admin_content.contains = admin_panel
@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
             respond_with(admin_panel, :location => admin_panels_url)
           end
         when "newcategoryalls"
-          panel_id = params.split("_")[params.split("_").length-1]
+          panel_id = params.split("_").last
           admin_panel = Panel.find(panel_id.to_i)
           admin_categoryall = admin_panel.categoryalls.new
           if admin_categoryall.save 
@@ -30,29 +30,29 @@ class ApplicationController < ActionController::Base
           end
         when "reacontents"
           flash[:notice] = notice_result(params.split("_")[1], "notice_success")
-          content_id = params.split("_")[params.split("_").length-1] 
+          content_id = params.split("_").last 
           admin_content = Content.find(content_id)   
           redirect_to edit_admin_content_path(admin_content) 
         when "reacategoryall" 
           flash[:notice] = notice_result(params.split("_")[1], "notice_success")
-          categoryall_id = params.split("_")[params.split("_").length-1]
+          categoryall_id = params.split("_").last
           admin_categoryall = Categoryall.find(categoryall_id)
           redirect_to edit_admin_categoryall_path(admin_categoryall)
         when "descategoryalls"
-          categoryall_id = params.split("_")[params.split("_").length-1]
+          categoryall_id = params.split("_").last
           admin_categoryall = Categoryall.find(categoryall_id)
           admin_panel = admin_categoryall.panel
           flash[:notice] = admin_categoryall.destroy ? notice_result(params.split("_")[1], "notice_success") : notice_result(params.split("_")[1], "notice_failure") 
           redirect_to edit_admin_categoryall_path(admin_panel.categoryalls.first)
         when "descontents"
-          content_id = params.split("_")[params.split("_").length-1]
+          content_id = params.split("_").last
           admin_content = Content.find(content_id)
           admin_panel = admin_content.panel
           flash[:notice] = admin_content.destroy ? notice_result(params.split("_")[1], "notice_success") : notice_result(params.split("_")[1], "notice_failure")
           redirect_to edit_admin_content_path(admin_panel.contents.first)
         else
           flash[:notice] = notice_result(params.split("_")[1], "notice_success") 
-          panel_id = params.split("_")[params.split("_").length-1]
+          panel_id = params.split("_").last
           admin_panel = Panel.find(panel_id.to_i)
           respond_with(admin_panel, :location => admin_panels_url)
       end
