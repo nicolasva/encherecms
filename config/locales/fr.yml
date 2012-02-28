@@ -22,6 +22,13 @@ fr:
       destroy:
         notice_success: "Cette catégorie a bien été supprimé, elle n'est plus disponible" 
         notice_failure: "Cette catégorie n'a pas été supprimé, elle est est encore disponible"
+    products:
+      update:
+        notice_success: "Le produit a bien été mise à jour"
+        notice_failure: "Le produit n'a pas été mise à jour correctement"
+      destroy: 
+        notice_success: "Le produit a été détruit"
+        notice_failure: "Le produit n'a pas été détruit correctement"
     panels:
       index:
         title: "Liste des menus"

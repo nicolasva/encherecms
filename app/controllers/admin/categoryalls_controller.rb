@@ -1,29 +1,5 @@
 class Admin::CategoryallsController < ApplicationController
   respond_to :html
-  # GET /admin/categoryalls
-  # GET /admin/categoryalls.json
-  def index
-    @admin_categoryalls = Categoryall.all
-
-    respond_with @admin_categoryalls
-  end
-
-  # GET /admin/categoryalls/1
-  # GET /admin/categoryalls/1.json
-  def show
-    @admin_categoryall = Admin::Categoryall.find(params[:id])
-
-    respond_with @admin_categoryall
-  end
-
-  # GET /admin/categoryalls/new
-  # GET /admin/categoryalls/new.json
-  def new
-    @admin_categoryall = Admin::Categoryall.new
-
-    respond_with @admin_categoryall
-  end
-
   # GET /admin/categoryalls/1/edit
   def edit
     @admin_categoryall = Categoryall.find(params[:id])

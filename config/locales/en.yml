@@ -22,6 +22,13 @@ en:
       update:
         notice_success: "This category was successfully updated"
         notice_failure: "This category was not successfully updated"
+    products:
+      update:
+        notice_success: "Product was successfully updated"
+        notice_failure: "Product was not successfully updated"
+      destroy: 
+        notice_success: "Product was successfully destroyed"
+        notice_failure: "Product was not successfully destroyed"
     panels:
       index:
         title: "Listing admin panels" 
