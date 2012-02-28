@@ -5,6 +5,6 @@
 
   %div.actions
     %fieldset
-      = render(:partial => "/admin/contents/form", :locals => {:f => f, :admin_content => @admin_content, :admin_panel => @admin_panel, :admin_categoryall => @admin_categoryall})
+      = render(:partial => "/admin/contents/form", :locals => {:f => f, :admin_content => @admin_content, :admin_panel => @admin_panel, :admin_categoryall => @admin_categoryall, :admin_product => @admin_product})
       %p
         = f.submit(t("admin.panels.edit.update_submit"), :name => "update_updcontents_#{@admin_panel.id}")  
