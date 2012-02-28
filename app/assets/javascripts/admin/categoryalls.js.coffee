@@ -24,8 +24,8 @@ jQuery ->
         set_choise_categoryall(2)
 
 set_choise_categoryall = (value_choise_categoryall) ->
-  $($("#id_categoryall").children()[value_choise_categoryall + 7]).show()
-  cpt = 7 
-  while cpt < 10
-    $($("#id_categoryall").children()[cpt]).hide() unless value_choise_categoryall + 7 == cpt
+  $($("#id_categoryall").children().children()[value_choise_categoryall + 6]).show()
+  cpt = 5 
+  while cpt < 9
+    $($("#id_categoryall").children().children()[cpt]).hide() unless value_choise_categoryall + 6 == cpt
     cpt += 1  
