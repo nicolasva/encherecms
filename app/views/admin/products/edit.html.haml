@@ -1,0 +1,6 @@
+= form_for [:admin, @admin_product] do |f|
+  = render(:partial => "/admin/products/templates/error_form", :locals => {:admin_product => @admin_product})
+  .actions
+    %fieldset
+      %p
+        = f.submit(t("admin.panels.edit.update_submit"), :name => "update_updproducts_#{@admin_panel.id}")
