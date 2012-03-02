@@ -1,0 +1,11 @@
+= #render(:partial => "/admin/panels/templates/form_panel_with_fields_for", :locals => {:admin_panel => admin_panel, :f => f})
+= #render(:partial => "/admin/categoryalls/templates/form_categoryall_with_fields_for_with_any_fields_for_products", :locals => {:admin_categoryall => admin_categoryall, :f => f, :admin_panel => admin_panel, :admin_product => admin_product})
+= #render(:partial => "/admin/contents/templates/form_content_with_fields_for", :locals => {:admin_content => admin_content, :f => f, :admin_panel => admin_panel})
+= #render(:partial => "/admin/panels/templates/form_panel_linkwebsite_with_fields_for", :locals => {:admin_panel => admin_panel, :f => f})
+
+= f.fields_for(:categoryalls, @admin_categoryall) do |admin_categoryall_field|
+  = admin_categoryall_field.fields_for(:panels, @admin_panel) do |admin_panel_field|
+    = admin_panel_field.fields_for(:contents, @admin_content) do |admin_content_field|
+     
+= render(:partial => "/admin/products/templates/form_product", :locals => {:admin_categoryall => admin_categoryall, :f_admin_product => f})
+   
