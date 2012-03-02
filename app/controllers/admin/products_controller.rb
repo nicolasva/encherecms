@@ -15,14 +15,13 @@ class Admin::ProductsController < ApplicationController
     @admin_product = Product.find(params[:id])
 
     if @admin_product.update_attributes(params[:admin_product])
-      flash[:notice] = t('admin.products.update.notice_success')
       params.keys.each do |k|
         set_params(k)
       end
     else
       flash[:notice] = t('admin.products.update.notice_failure') 
+      respond_with(@admin_product)
     end
-    respond_with(@admin_product)
   end
 
   # DELETE /admin/products/1

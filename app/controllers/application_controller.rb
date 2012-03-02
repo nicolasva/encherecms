@@ -38,6 +38,11 @@ class ApplicationController < ActionController::Base
           categoryall_id = params.split("_").last
           admin_categoryall = Categoryall.find(categoryall_id)
           redirect_to edit_admin_categoryall_path(admin_categoryall)
+        when "reaproducts"
+          flash[:notice] = notice_result(params.split("_")[1], 'notice_success')
+          product_id = params.split("_").last
+          admin_product = Product.find(product_id)
+          redirect_to edit_admin_product_path(admin_product) 
         when "descategoryalls"
           categoryall_id = params.split("_").last
           admin_categoryall = Categoryall.find(categoryall_id)
