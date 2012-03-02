@@ -1,0 +1,28 @@
+%div.class_categoryalls_lists 
+  %ul
+    - admin_panel.categoryalls.each do |categoryall|
+      = content_tag_for :li, categoryall do
+        = f_admin_categoryall.submit(categoryall.name, :name => "select_reacategoryalls_#{categoryall.id}")
+        = f_admin_categoryall.submit("X", :name => "delete_descategoryalls_#{categoryall.id}")
+  %p
+    = f_admin_categoryall.label(:name) 
+    %br
+    = f_admin_categoryall.text_field(:name)
+  %p
+    = f_admin_categoryall.label(:imgcategoryall)
+    %br
+    = f_admin_categoryall.file_field(:imgcategoryall)
+
+  %p
+    %ul.class_admin_choise_category
+      - Categoryall::CHOISE_CATEGORY.each do |key_choise_category, value_choise_category|
+        %li
+          = f_admin_categoryall.radio_button(:choise_category, value_choise_category)
+          = key_choise_category
+  = render(:partial => "/admin/products/templates/form_product_with_fields_for", :locals => {:admin_categoryall => admin_categoryall, :f_admin_categoryall => f_admin_categoryall, :admin_product => admin_product})   
+  %p#id_content
+    = f_admin_categoryall.text_area(:content) 
+  %p#id_linkwebsite 
+    = f_admin_categoryall.text_field(:linkwebsite)
+     
+    

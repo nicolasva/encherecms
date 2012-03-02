@@ -1,0 +1,6 @@
+%div#id_categoryall
+  = f.submit("Ajouter une nouvelle catégorie", :name=>"add_newcategoryalls_#{admin_panel.id}")
+
+  = f.fields_for(:categoryalls, admin_categoryall) do |f_admin_categoryall|
+    = render(:partial => "/admin/categoryalls/templates/form_categoryall_with_fields_for_with_fields_for_products", :locals => {:admin_panel => admin_panel, :f_admin_categoryall => f_admin_categoryall, :admin_categoryall => admin_categoryall, :admin_product => admin_product, :f_admin_product => f})
+
