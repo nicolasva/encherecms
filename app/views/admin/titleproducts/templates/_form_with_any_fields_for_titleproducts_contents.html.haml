@@ -1,0 +1,3 @@
+#id_contents
+  = f_admin_product.submit("Ajouter des informations concernant ce produit", :name => "add_newtitleproducts_#{admin_product.id}")
+  = render(:partial => "/admin/titleproducts/templates/form_titleproduct", :locals => {:admin_product => admin_product, :f_admin_titleproduct => f_admin_titleproduct}) 

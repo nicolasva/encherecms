@@ -1,0 +1,16 @@
+%p
+  %ul
+    - admin_product.titleproducts.each do |titleproduct|
+      = content_tag_for :li, titleproduct do 
+        = f_admin_titleproduct.submit(titleproduct.title, :name => "select_reatitleproducts_#{titleproduct.id}") 
+        = f_admin_titleproduct.submit("X", :name => "delete_destitleproducts_#{titleproduct.id}")
+
+%p
+  = f_admin_titleproduct.label(:title)
+  %br
+  = f_admin_titleproduct.text_field(:title)
+
+%p
+  = f_admin_titleproduct.label(:detail)
+  %br
+  = f_admin_titleproduct.text_field(:detail)
