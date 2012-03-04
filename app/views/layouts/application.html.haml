@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Encherecms
+  = stylesheet_link_tag "application", :media => "all"
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+  %body
+    #flash
+      - flash.each do |type, message|
+        - unless message.blank?
+          %div{:id => "flash_#{type}", :class=> "message #{type}", :style => "background-color:#ccffcc; opacity:.6; border:1px solid red; position: fixed;"}
+            %p{:style => 'color:red;'}
+              = message
+   
+  

@@ -43,29 +43,51 @@ class ApplicationController < ActionController::Base
           product_id = params.split("_").last
           admin_product = Product.find(product_id)
           redirect_to edit_admin_product_path(admin_product) 
+        when "desproducts"
+          flash[:notice] = notice_result(params.split("_")[1], 'notice_success')
+          product_id = params.split("_").last
+          admin_product = Product.find(product_id)
+          admin_categoryall = admin_product.categoryall
+          if admin_product.destroy
+            flash[:notice] = notice_result(params.split("_")[1], "notice_success")
+            redirect_to admin_categoryall.products.empty? ? edit_admin_categoryall_path(admin_categoryall) : edit_admin_product_path(admin_categoryall.products.first)
+          else
+            flash[:notice] = notice_result(params.split("_")[1], "notice_success")
+            redirect_to(:back)
+          end 
         when "descategoryalls"
           categoryall_id = params.split("_").last
           admin_categoryall = Categoryall.find(categoryall_id)
           admin_panel = admin_categoryall.panel
-          flash[:notice] = admin_categoryall.destroy ? notice_result(params.split("_")[1], "notice_success") : notice_result(params.split("_")[1], "notice_failure") 
-          redirect_to edit_admin_categoryall_path(admin_panel.categoryalls.first)
+          if admin_categoryall.destroy
+            flash[:notice] = notice_result(params.split("_")[1], "notice_success")
+            redirect_to admin_panel.categoryalls.empty? ? edit_admin_panel_path(admin_panel) : edit_admin_categoryall_path(admin_panel.categoryalls.first)
+          else
+            flash[:notice] = notice_result(params.split("_")[1], "notice_failure") 
+            redirect_to(:back)
+          end
         when "descontents"
           content_id = params.split("_").last
           admin_content = Content.find(content_id)
           admin_panel = admin_content.panel
-          flash[:notice] = admin_content.destroy ? notice_result(params.split("_")[1], "notice_success") : notice_result(params.split("_")[1], "notice_failure")
-          redirect_to edit_admin_content_path(admin_panel.contents.first)
+          if admin_content.destroy
+            flash[:notice] = notice_result(params.split("_")[1], "notice_success")
+            redirect_to admin_panel.contents.empty? ? edit_admin_panel_path(admin_panel) : edit_admin_content_path(admin_panel.contents.first)
+          else
+            flash[:notice] = notice_result(params.split("_")[1], "notice_failure")
+            redirect_to(:back)
+          end
         when "desproducts"
           product_id = params.split("_").last
           admin_product = Product.find(product_id)
           admin_categoryall = admin_product.categoryall
           if admin_categoryall.destroy
             flash[:notice] = notice_result(params.split("_")[1], "notice_success")
-            redirect_to edit_admin_categoryall_path(admin_categoryall)
+            redirect_to admin_categoryall.products.empty? ? edit_admin_categoryall_path(admin_categoryall) : edit_admin_product_path(admin_product)
           else
             flash[:notice] = notice_result(params.split("_")[1], "notice_failure")
             redirect_to(:back)
-          end 
+          end
         when "newproducts"
           categoryall_id = params.split("_").last
           admin_categoryall = Categoryall.find(categoryall_id)
