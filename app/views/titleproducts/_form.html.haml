@@ -1,0 +1,10 @@
+= form_for @titleproduct do |f|
+  -if @titleproduct.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@titleproduct.errors.count, "error")} prohibited this titleproduct from being saved:"
+      %ul
+        - @titleproduct.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'

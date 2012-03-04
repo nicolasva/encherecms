@@ -1,0 +1,2 @@
+module TitleproductsHelper
+end

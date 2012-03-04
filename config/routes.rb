@@ -1,4 +1,6 @@
 Encherecms::Application.routes.draw do
+  resources :titleproducts
+
   resources :panels do
     collection do
       resources :contents

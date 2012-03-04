@@ -21,8 +21,12 @@
           = key_choise_category
   = render(:partial => "/admin/products/templates/form_product_with_fields_for", :locals => {:admin_categoryall => admin_categoryall, :f_admin_categoryall => f_admin_categoryall, :admin_product => admin_product})   
   %p#id_content
+    = f_admin_categoryall.label(:content)
+    %br
     = f_admin_categoryall.text_area(:content) 
   %p#id_linkwebsite 
+    = f_admin_categoryall.label(:linkwebsite)
+    %br
     = f_admin_categoryall.text_field(:linkwebsite)
      
     

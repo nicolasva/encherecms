@@ -1,0 +1,17 @@
+%h1 Listing titleproducts
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @titleproducts.each do |titleproduct|
+    %tr
+      %td= link_to 'Show', titleproduct
+      %td= link_to 'Edit', edit_titleproduct_path(titleproduct)
+      %td= link_to 'Destroy', titleproduct, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Titleproduct', new_titleproduct_path

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120226185000) do
+ActiveRecord::Schema.define(:version => 20120304143432) do
 
   create_table "categoryalls", :force => true do |t|
     t.string   "name",                        :default => "Category name"
@@ -76,5 +76,15 @@ ActiveRecord::Schema.define(:version => 20120226185000) do
   end
 
   add_index "products", ["categoryall_id"], :name => "products_on_categoryall_id"
+
+  create_table "titleproducts", :force => true do |t|
+    t.string   "title",      :default => "title comentable products", :null => false
+    t.text     "detail",     :default => " "
+    t.integer  "product_id",                                          :null => false
+    t.datetime "created_at",                                          :null => false
+    t.datetime "updated_at",                                          :null => false
+  end
+
+  add_index "titleproducts", ["product_id"], :name => "product_id"
 
 end

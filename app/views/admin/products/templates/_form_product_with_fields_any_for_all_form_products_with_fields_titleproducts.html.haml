@@ -1,0 +1,3 @@
+= f_admin_product.fields_for(:categoryalls, admin_categoryall) do |f_admin_categoryall|
+  = render(:partial => "/admin/panels/templates/form_panel_with_fields_for", :locals => {:admin_panel => admin_panel, :f => f_admin_categoryall})
+  = render(:partial => "/admin/categoryalls/templates/form_with_fields_for_categoryall_with_fields_for_products_with_any_fields_for_titleproducts", :locals => {:admin_panel => admin_panel, :f_admin_categoryall => f_admin_categoryall, :admin_categoryall => admin_categoryall, :admin_product => admin_product, :f_admin_product => f_admin_product, :f => f_admin_product})
