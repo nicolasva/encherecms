@@ -1,4 +1,0 @@
-%div#id_products
-  = f_admin_categoryall.submit("Ajouter un nouveau produit", :name => "add_newproducts_#{admin_categoryall.id}")
-  = f_admin_categoryall.fields_for(:products, admin_product) do |f_admin_product|
-    = render(:partial => "/admin/products/templates/form_product", :locals => {:admin_categoryall => admin_categoryall, :f_admin_product => f_admin_product})

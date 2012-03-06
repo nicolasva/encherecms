@@ -1,0 +1,2 @@
+= f_admin_product.fields_for(:titleproducts, admin_titleproduct) do |f_admin_titleproduct|
+  = render(:partial => "/admin/titleproducts/form_titleproduct", :locals => {:f_admin_titleproduct => f_admin_titleproduct, :admin_product => admin_product})

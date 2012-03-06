@@ -19,7 +19,8 @@
         %li
           = f_admin_categoryall.radio_button(:choise_category, value_choise_category)
           = key_choise_category
-  = render(:partial => "/admin/products/templates/form_product_with_fields_for", :locals => {:admin_categoryall => admin_categoryall, :f_admin_categoryall => f_admin_categoryall, :admin_product => admin_product})   
+  = #render(:partial => "/admin/products/templates/form_product_with_fields_for", :locals => {:admin_categoryall => admin_categoryall, :f_admin_categoryall => f_admin_categoryall, :admin_product => admin_product})  
+  = render(:partial => "/admin/products/templates/form_product_with_fields_for_titleproducts_with_fields_for", :locals => {:admin_categoryall => admin_categoryall, :f_admin_categoryall => f_admin_categoryall, :admin_product => admin_product})   
   %p#id_content
     = f_admin_categoryall.label(:content)
     %br
