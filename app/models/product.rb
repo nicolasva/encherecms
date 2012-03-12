@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   :url => "/images/products/:id/:basename.:extension",
   :path => ":rails_root/app/assets/images/products/:id/:basename.:extension"
   belongs_to :categoryall
+  has_many :titleproducts
 
   accepts_nested_attributes_for :categoryall
 

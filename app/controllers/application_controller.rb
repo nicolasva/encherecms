@@ -88,6 +88,17 @@ class ApplicationController < ActionController::Base
             flash[:notice] = notice_result(params.split("_")[1], "notice_failure")
             redirect_to(:back)
           end
+        when "newtitleproducts"
+          product_id = params.split("_").last
+          admin_pruduct = Product.find(product_id)
+          admin_titleproduct = Titleproduct.new(:product_id => product_id)
+          if admin_titleproduct.save
+            flash[:notice] = notice_result(params.split("_")[1], "notice_success")
+            redirect_to edit_admin_titleproduct_path(admin_titleproduct)
+          else
+            flash[:notice] = notice_result(params.split("_")[1], "notice_failure")
+            redirect_to edit_admin_product_path(admin_product)
+          end
         when "newproducts"
           categoryall_id = params.split("_").last
           admin_categoryall = Categoryall.find(categoryall_id)

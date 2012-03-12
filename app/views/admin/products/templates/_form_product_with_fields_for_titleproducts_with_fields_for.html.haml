@@ -1,4 +1,4 @@
 %div#id_products
   = f_admin_categoryall.submit("Ajouter un nouveau produit", :name => "add_newproducts_#{admin_categoryall.id}")
   = f_admin_categoryall.fields_for(:products, admin_product) do |f_admin_product|
-    = render(:partial => "/admin/products/templates/form_product_with_fields_for_with_fields_for_titleproducts", :locals => {:admin_categoryall => admin_categoryall, :admin_titleproduct => admin_titleproduct, :f_admin_product => f_admin_product})
+    = render(:partial => "/admin/products/templates/form_product_with_fields_for_with_fields_for_titleproducts", :locals => {:admin_categoryall => admin_categoryall, :admin_product => admin_product, :f_admin_product => f_admin_product, :admin_titleproduct => admin_titleproduct})

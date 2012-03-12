@@ -6,7 +6,11 @@ Encherecms::Application.routes.draw do
       resources :contents
       resources :categoryalls do
         collection do
-          resources :products
+          resources :products do 
+            collection do 
+              resources :titleproducts
+            end
+          end
         end
       end 
     end 
@@ -19,7 +23,11 @@ Encherecms::Application.routes.draw do
         resources :contents
         resources :categoryalls do
           collection  do
-            resources :products
+            resources :products do 
+              collection do
+                resources :titleproducts
+              end
+            end
           end
         end
       end 

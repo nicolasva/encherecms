@@ -19,4 +19,5 @@
   %br
   = f_admin_product.text_field(:nbr_bidder)
 
+  = render(:partial => "/admin/titleproducts/templates/form_titleproducts_with_fields_for", :locals => {:f_admin_product => f_admin_product, :admin_product => admin_product, :admin_titleproduct => admin_titleproduct})
   
