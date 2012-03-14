@@ -4,6 +4,6 @@
   = render(:partial => "/admin/categoryalls/templates/error_form", :locals => {:admin_categoryall => @admin_categoryall})
   %div.actions
     %fieldset
-      = render(:partial => "form", :locals => {:f => f, :admin_categoryall => @admin_categoryall, :admin_content => @admin_content, :admin_panel => @admin_panel, :admin_product => @admin_product})
+      = render(:partial => "form", :locals => {:f => f, :admin_categoryall => @admin_categoryall, :admin_content => @admin_content, :admin_panel => @admin_panel, :admin_product => @admin_product, :admin_titleproduct => @admin_titleproduct})
       %p
         = f.submit(t("admin.panels.edit.update_submit"), :name=>"update_updcategoryalls_#{@admin_panel.id}")
