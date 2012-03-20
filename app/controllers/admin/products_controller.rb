@@ -3,6 +3,7 @@ class Admin::ProductsController < ApplicationController
   # GET /admin/products/1/edit
   def edit
     @admin_product = Product.find(params[:id])
+    @admin_titleproduct = @admin_product.titleproducts.first
     @admin_categoryall = @admin_product.categoryall
     @admin_panel = @admin_categoryall.panel
     @admin_content = @admin_panel.contents.first
