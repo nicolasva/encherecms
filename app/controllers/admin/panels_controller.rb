@@ -22,7 +22,8 @@ class Admin::PanelsController < ApplicationController
     
     flash[:notice] = @admin_panel.save ? t("admin.panels.create.notice_success") : t("admin.panels.create.notice_failure") 
  
-    respond_with(@admin_panel, :location => edit_panel_path(@admin_panel))
+    #respond_with(@admin_panel, :location => edit_panel_path(@admin_panel))
+    redirect_to edit_panel_path(@admin_panel)
   end
 
   # GET /admin/panels/1/edit
@@ -30,8 +31,8 @@ class Admin::PanelsController < ApplicationController
     @admin_panel = Panel.find(params[:id])
     @admin_content = @admin_panel.contents.first
     @admin_categoryall = @admin_panel.categoryalls.first
-    @admin_product = @admin_categoryall.products.first 
-    @admin_titleproduct = @admin_product.titleproducts.first
+    @admin_product = @admin_categoryall.nil? ? @admin_categoryall : @admin_categoryall.products.first 
+    @admin_titleproduct = @admin_product.nil? ? @admin_product : @admin_product.titleproducts.first
     respond_with(@admin_panel)
   end
 

@@ -24,6 +24,7 @@ jQuery ->
         set_choise_categoryall(2)
 
 set_choise_categoryall = (value_choise_categoryall) ->
+  console.log(value_choise_categoryall)
   $($("#id_categoryall").children().children()[value_choise_categoryall + 6]).show()
   cpt = 5 
   while cpt < 9

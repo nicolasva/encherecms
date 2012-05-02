@@ -1,21 +1,23 @@
-= f_admin_categoryall.fields_for(:products, admin_product) do |f_admin_product|
-  %p
-    %ul
-      - admin_categoryall.products.each do |product|
-        = content_tag_for :li, product do
-          = f_admin_product.submit(product.title, :name => "select_products_#{product.id}")
-          = f_admin_product.submit("X", :name => "delete_desproducts_#{product.id}")
-  %p
-    = f_admin_product.label(:title)
-    %br
-    = f_admin_product.text_field(:title)
-  %p
-    = f_admin_product.label(:public_price)
-    %br
-    = f_admin_product.text_field(:public_price)
-  %p
-    = f_admin_product.label(:nbr_bidder)
-    %br
-    = f_admin_product.text_field(:nbr_bidder)
+#id_products
+  = f_admin_categoryall.submit("Ajouter un nouveau produit", :name => "add_newproducts_#{admin_categoryall.id}")
+  = f_admin_categoryall.fields_for(:products, admin_product) do |f_admin_product|
+    %p
+      %ul
+        - admin_categoryall.products.each do |product|
+          = content_tag_for :li, product do
+            = f_admin_product.submit(product.title, :name => "select_products_#{product.id}")
+            = f_admin_product.submit("X", :name => "delete_desproducts_#{product.id}")
+    %p
+      = f_admin_product.label(:title)
+      %br
+      = f_admin_product.text_field(:title)
+    %p
+      = f_admin_product.label(:public_price)
+      %br
+      = f_admin_product.text_field(:public_price)
+    %p
+      = f_admin_product.label(:nbr_bidder)
+      %br
+      = f_admin_product.text_field(:nbr_bidder)
 
-= render(:partial => "/admin/titleproducts/templates/form_titleproducts_with_fields_for", :locals => {:f_admin_product => f_admin_product, :admin_product => admin_product, :admin_titleproduct => admin_titleproduct}) 
+    = render(:partial => "/admin/titleproducts/templates/form_titleproducts_with_fields_for", :locals => {:f_admin_product => f_admin_product, :admin_product => admin_product, :admin_titleproduct => admin_titleproduct}) 

@@ -11,20 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120304143432) do
+ActiveRecord::Schema.define(:version => 20120415142910) do
 
   create_table "categoryalls", :force => true do |t|
     t.string   "name",                        :default => "Category name"
     t.integer  "panel_id",                                                      :null => false
+    t.boolean  "link_category",               :default => true
     t.string   "imgcategoryall_file_name"
     t.string   "imgcategoryall_content_type"
     t.string   "imgcategoryall_file_size"
     t.datetime "imgcategoryall_updated_at"
     t.datetime "created_at",                                                    :null => false
     t.datetime "updated_at",                                                    :null => false
-    t.integer  "choise_category",             :default => 0,                    :null => false
     t.text     "content",                     :default => "Enter content text"
     t.string   "linkwebsite",                 :default => "http://"
+    t.integer  "choise_category",             :default => 0,                    :null => false
   end
 
   add_index "categoryalls", ["panel_id"], :name => "panel_id"

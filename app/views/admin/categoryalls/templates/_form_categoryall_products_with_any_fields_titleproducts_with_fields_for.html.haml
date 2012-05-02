@@ -9,10 +9,6 @@
     %br
     = f_admin_categoryall.text_field(:name)
   %p
-    = f_admin_categoryall.label(:name)
-    %br
-    = f_admin_categoryall.text_field(:name)
-  %p
     = f_admin_categoryall.label(:imgcategoryall) 
     %br
     = f_admin_categoryall.file_field(:imgcategoryall)
@@ -22,4 +18,16 @@
         %li
           = f_admin_categoryall.radio_button(:choise_category, value_choise_category)
           = key_choise_category
+
   = render(:partial => "/admin/products/templates/form_with_any_fields_for_products_with_fields_for_titleproducts", :locals => {:admin_categoryall => admin_categoryall, :f_admin_categoryall => f_admin_categoryall, :f_admin_product => f_admin_product, :admin_product => admin_product, :admin_titleproduct => admin_titleproduct})
+
+  %p#id_content 
+    = f_admin_categoryall.label(:content)
+    %br
+    = f_admin_categoryall.text_area(:content)
+
+  %p#id_linkwebsite
+    = f_admin_categoryall.label(:linkwebsite)
+    %br
+    = f_admin_categoryall.text_field(:linkwebsite)
+     
