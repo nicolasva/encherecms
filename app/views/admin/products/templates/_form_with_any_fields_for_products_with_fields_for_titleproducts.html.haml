@@ -5,7 +5,7 @@
       %ul
         - admin_categoryall.products.each do |product|
           = content_tag_for :li, product do
-            = f_admin_product.submit(product.title, :name => "select_products_#{product.id}")
+            = f_admin_product.submit(product.title, :name => "select_reaproducts_#{product.id}")
             = f_admin_product.submit("X", :name => "delete_desproducts_#{product.id}")
     %p
       = f_admin_product.label(:title)
